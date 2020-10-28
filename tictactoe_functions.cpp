@@ -68,3 +68,19 @@ void draw_board(char board[]) {
     std::cout << "     |     |     \n\n";
 
 }
+
+std::string win_or_next(char board[]) {
+    // If no winner, play next. Otherwise, notify the winner.
+
+    int answers[8][3] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {0, 4, 8}, {2, 4, 6}};
+    for (int i = 0; i < 8; i++) {
+        if ((board[answers[i][0]] == board[answers[i][1]]) && (board[answers[i][1]] == board[answers[i][2]]) && (board[answers[i][0]] == board[answers[i][2]])){
+            if (board[answers[i][0]] == 'X') {
+                return "X Player Win!";
+            } else {
+                return "O Player Win!";
+            }
+        }
+    }
+    return "Next";
+}

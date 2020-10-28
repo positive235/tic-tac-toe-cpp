@@ -18,6 +18,8 @@ int main() {
     bool player_turn = true;
     // Number of play. If it is 9, draw and game over.
     int num_play = 0;
+    // if "Next", no winner. Otherwise, there is a winner.
+    std::string winner_or_next = "Next";
 
     // Game introduction
     introduction();
@@ -32,8 +34,16 @@ int main() {
         player_turn = update_board_and_turn(start, board, player_turn);
         draw_board(board);
         num_play++;
+
+        // Decide no winner or not.
+        winner_or_next = win_or_next(board);
+        if (winner_or_next != "Next"){
+            // If there is a winner, notify the winner and game over.
+            std::cout << "\n" << winner_or_next << "\n";
+            start = false;
+        } 
     }
-    
+
     if (num_play == 9) {
         // If number of play is 9, draw and game over.
         std::cout << "DRAW! GAME OVER.\n\n";
