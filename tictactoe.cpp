@@ -39,7 +39,7 @@ int main() {
         winner_or_next = win_or_next(board);
         if (winner_or_next != "Next"){
             // If there is a winner, notify the winner and game over.
-            std::cout << "\n" << winner_or_next << "\n";
+            std::cout << "\n" << winner_or_next << "\n\n";
             start = false;
         } 
     }

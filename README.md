@@ -1,4 +1,4 @@
-# Tic-Tac-Toe in C++ (In Progress)
+# Tic-Tac-Toe in C++
 
 ## How to run
 
@@ -36,46 +36,88 @@ _____|_____|_____
 Current Player: X
 Next Player: O
 
-Where do you want to put?(answer example: 3): 7
+Where do you want to put?(answer example: 3): 2
      |     |     
-  1  |  2  |  3
+  1  |  X  |  3
 _____|_____|_____
      |     |     
   4  |  5  |  6
 _____|_____|_____
      |     |     
-  X  |  8  |  9
+  7  |  8  |  9
      |     |     
+
 Current Player: O
 Next Player: X
 
-Where do you want to put?(answer example: 3): 3
+Where do you want to put?(answer example: 3): 1
      |     |     
-  1  |  2  |  O
+  O  |  X  |  3
 _____|_____|_____
      |     |     
   4  |  5  |  6
 _____|_____|_____
      |     |     
-  X  |  8  |  9
+  7  |  8  |  9
      |     |     
 
 Current Player: X
 Next Player: O
 
-Where do you want to put?(answer example: 3): 5
+Where do you want to put?(answer example: 3): 3
      |     |     
-  1  |  2  |  O
+  O  |  X  |  X
 _____|_____|_____
      |     |     
-  4  |  X  |  6
+  4  |  5  |  6
 _____|_____|_____
      |     |     
-  X  |  8  |  9
+  7  |  8  |  9
      |     |     
 
 Current Player: O
 Next Player: X
 
-Where do you want to put?(answer example: 3): 
+Where do you want to put?(answer example: 3): 5
+     |     |     
+  O  |  X  |  X
+_____|_____|_____
+     |     |     
+  4  |  O  |  6
+_____|_____|_____
+     |     |     
+  7  |  8  |  9
+     |     |     
+
+Current Player: X
+Next Player: O
+
+Where do you want to put?(answer example: 3): 6
+     |     |     
+  O  |  X  |  X
+_____|_____|_____
+     |     |     
+  4  |  O  |  X
+_____|_____|_____
+     |     |     
+  7  |  8  |  9
+     |     |     
+
+Current Player: O
+Next Player: X
+
+Where do you want to put?(answer example: 3): 9
+     |     |     
+  O  |  X  |  X
+_____|_____|_____
+     |     |     
+  4  |  O  |  X
+_____|_____|_____
+     |     |     
+  7  |  8  |  O
+     |     |     
+
+
+O Player Win! 
+
 ```
