@@ -36,18 +36,34 @@ bool notify_turn(bool player_turn) {
 
 bool update_board_and_turn(bool start, char board[], bool player_turn) {
     // Ask player where the player want to put, and update the board and the next turn.
+    // If 'O' or 'X' already exist where the player want to put, ask again.
 
     int where_to_put;
-    if (start) {
-        std::cout << "Where do you want to put?(answer example: 3): ";
-        std::cin >> where_to_put;
-        where_to_put--;
-        if (player_turn) {
-            board[where_to_put] = 'X';
-            player_turn = false;
-        } else {
-            board[where_to_put] = 'O';
-            player_turn = true;
+    bool is_correct_put = false;
+
+    while (!is_correct_put){
+        if (start) {
+            std::cout << "Where do you want to put?(answer example: 3): ";
+            std::cin >> where_to_put;
+            where_to_put--;
+
+            if (player_turn) {
+                if (board[where_to_put] != 'O' && board[where_to_put] != 'X'){
+                    board[where_to_put] = 'X';
+                    player_turn = false;
+                    is_correct_put = true;
+                } else {
+                    std::cout << "\nYou can't put where 'O' or 'X' already exist.\n";
+                }
+            } else {
+                if (board[where_to_put] != 'O' && board[where_to_put] != 'X'){
+                    board[where_to_put] = 'O';
+                    player_turn = true;
+                    is_correct_put = true;
+                } else {
+                    std::cout << "\nYou can't put where 'O' or 'X' already exist.\n";
+                }
+            }
         }
     }
     return player_turn;
