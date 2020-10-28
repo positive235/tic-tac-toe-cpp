@@ -2,7 +2,10 @@
 #include <vector>
 
 void introduction() {
-    // introduction to tictactoe game
+    // Introduction to tictactoe game
+    // ASC|| ART from "Text to ASC|| Generator(http://patorjk.com/software/taag/#p=display&f=Modular&t=tic%20tac%20toe)"
+    // Game introduction from codecademy(https://www.codecademy.com/courses/learn-c-plus-plus/projects/cpp-tic-tac-toe)
+
     std::cout << " _______  ___   _______    _______  _______  _______    _______  _______  _______ \n";
     std::cout << "|       ||   | |       |  |       ||   _   ||       |  |       ||       ||       |\n";
     std::cout << "|_     _||   | |       |  |_     _||  |_|  ||       |  |_     _||   _   ||    ___|\n";
@@ -15,8 +18,11 @@ void introduction() {
     std::cout << "The player who succeeds in placing three of their marks\n";
     std::cout << "in a horizontal, vertical or diagonal row wins the game.\n\n";
 }
+
 bool notify_turn(bool player_turn) {
-    // which player turn is: If X player turn, the value is true. If O player turn, the value is false.
+    // Which player turn is: If X player turn, the value is true. 
+    // If O player turn, the value is false.
+
     std::cout << "Current Player: ";
     if (player_turn) {
         std::cout << "X\n";
@@ -28,7 +34,9 @@ bool notify_turn(bool player_turn) {
     return player_turn;
 }
 
-bool play(bool start, char board[], bool player_turn) {
+bool update_board_and_turn(bool start, char board[], bool player_turn) {
+    // Ask player where the player want to put, and update the board and the next turn.
+
     int where_to_put;
     if (start) {
         std::cout << "Where do you want to put?(answer example: 3): ";
@@ -46,8 +54,9 @@ bool play(bool start, char board[], bool player_turn) {
 }
 
 void draw_board(char board[]) {
-    // draw current board
+    // Draw current board
     // from codecademy (https://www.codecademy.com/courses/learn-c-plus-plus/projects/cpp-tic-tac-toe)
+
     std::cout << "     |     |     \n";
     std::cout << "  " << board[0] << "  |  " << board[1] << "  |  " << board[2] << '\n';
     std::cout << "_____|_____|_____\n";
