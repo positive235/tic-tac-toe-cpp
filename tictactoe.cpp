@@ -26,7 +26,7 @@ int main() {
     // Show initial board
     draw_board(board);
     
-    while (start && num_play < 9) {
+    while (start && num_play <= 9) {
         // Until game over, notify the current and the next player,
         // update the board and the next turn, and show the board.
 
@@ -42,11 +42,14 @@ int main() {
             std::cout << "\n" << winner_or_next << "\n\n";
             start = false;
         } 
+
+        if (num_play == 9 && winner_or_next == "Next") {
+            // If no winner but board is full, draw and game over.
+            std::cout << "DRAW! GAME OVER.\n\n";
+            start = false;
+        }
     }
 
-    if (num_play == 9) {
-        // If number of play is 9, draw and game over.
-        std::cout << "DRAW! GAME OVER.\n\n";
-    }
+    
 }
 
